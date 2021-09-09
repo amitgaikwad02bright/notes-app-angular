@@ -1,1 +1,6 @@
 /* Add application styles & imports to this file! */
+body {
+  font-family: cursive;
+  font-size: 14px;
+  background: #eaeafd;
+}

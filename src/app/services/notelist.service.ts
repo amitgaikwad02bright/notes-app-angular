@@ -6,43 +6,7 @@ import { max } from 'rxjs/operators';
 
 @Injectable()
 export class NoteListService {
-  apiUrl =
-    'https://gist.githubusercontent.com/amitgaikwad02bright/74698a448c9bc472b4d84dc472e87217/raw/76ff49ef4ae3f34d71c1806814aedbfcd3c2a2ce/notelist.json';
-
-  notes: Note[] = [
-    {
-      id: 1,
-      text: 'first note'
-    },
-    {
-      id: 2,
-      text: 'this is  note'
-    },
-    {
-      id: 3,
-      text: 'first note'
-    },
-    {
-      id: 4,
-      text: 'this is  note'
-    },
-    {
-      id: 5,
-      text: 'first note'
-    },
-    {
-      id: 6,
-      text: 'this is  note'
-    },
-    {
-      id: 7,
-      text: 'first note'
-    },
-    {
-      id: 8,
-      text: 'this is  note'
-    }
-  ];
+  notes: Note[] = [];
 
   constructor(private http: HttpClient) {}
 
