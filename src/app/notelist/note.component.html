@@ -1,0 +1,54 @@
+<div (click)="onNoteClick()" class="note">
+  <div *ngIf="!editingNote; else elseNewNoteTextInput" class="note-text"> {{note.text}}</div>
+  <ng-template #elseNewNoteTextInput>
+    <textarea placeholder="enter new note" #textarea (focusout)="onNoteTextBlur()" [(ngModel)]="updatedNoteText"></textarea>
+  </ng-template>
+  <button class="delete-icon" (click)="delteNote(note.id, $event)">X</button>
+</div>
+<style>
+  .delete-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    cursor: pointer;
+
+  }
+
+  .delete-icon:hover {
+    outline: 1px solid black;
+  }
+
+  .note {
+    background: rgb(247 223 108);
+    padding: 20px;
+    width: 160px;
+    min-height: 150px;
+    font-family: cursive;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .note .note-text {
+    word-break: break-all;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .note {
+      width: 80vw;
+    }
+  }
+
+  .note textarea {
+    background: transparent;
+    resize: none;
+    outline: none;
+    width: 90%;
+    padding: 10px;
+    min-height: 130px;
+    height: 100%;
+    border: none;
+    margin-top: 5px;
+  }
+</style>

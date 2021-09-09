@@ -1,0 +1,11 @@
+<div class="note-list">
+  <div *ngFor="let note of noteList">
+    <note [note]="note"> </note>
+  </div>
+  <div class="note new-note-area">
+    <a (click)="onNewNoteClick()" *ngIf="!editingNewNote; else elseNewNoteTextInput">+ New Note</a>
+    <ng-template #elseNewNoteTextInput>
+      <textarea  #textarea placeholder="enter new note" (blur)="onNewNoteTextBlur()" [(ngModel)]="newNoteText"></textarea>
+    </ng-template>
+  </div>
+</div>
