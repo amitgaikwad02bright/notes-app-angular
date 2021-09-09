@@ -1,3 +1,4 @@
-# angular-ivy-sq8iuh
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-ivy-sq8iuh)
+Sticky Note App In angular
+1) Create New Note
+2) Edit Note
+3) Delete Note
