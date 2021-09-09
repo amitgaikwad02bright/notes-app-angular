@@ -18,14 +18,18 @@
     height: auto;
   }
 }
-.note-list::-webkit-scrollbar-track {
-  background: red; /* color of the tracking area */
+.note-list::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
 }
-
 .note-list::-webkit-scrollbar-thumb {
-  background-color: blue; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 3px solid orange; /* creates padding around scroll thumb */
+  background: pink;
+  border-radius: 16px;
+  box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%),
+    inset -2px -2px 2px rgb(0 0 0 / 25%);
+}
+.note-list::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #434343, #434343 1px, #111 0, #111);
 }
 .note-list .note {
   background: rgb(247 223 108);
