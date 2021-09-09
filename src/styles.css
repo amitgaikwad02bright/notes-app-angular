@@ -1,6 +1,22 @@
 /* Add application styles & imports to this file! */
+html {
+  --scrollbarBG: #cfd8dc;
+  --thumbBG: #90a4ae;
+}
 body {
   font-family: cursive;
   font-size: 14px;
   background: #eaeafd;
+  scrollbar-width: thin;
+  scrollbar-color: red blue;
+  padding: 10px 25px;
+}
+body::-webkit-scrollbar-track {
+  background: red; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: blue; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid orange; /* creates padding around scroll thumb */
 }

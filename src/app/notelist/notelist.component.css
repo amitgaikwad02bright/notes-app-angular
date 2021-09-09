@@ -11,14 +11,22 @@
 }
 @media only screen and (max-width: 500px) {
   .note-list .note {
-    width: 80vw !important;
+    width: 70vw !important;
   }
   .note-list {
     flex-wrap: nowrap;
     height: auto;
   }
 }
+.note-list::-webkit-scrollbar-track {
+  background: red; /* color of the tracking area */
+}
 
+.note-list::-webkit-scrollbar-thumb {
+  background-color: blue; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid orange; /* creates padding around scroll thumb */
+}
 .note-list .note {
   background: rgb(247 223 108);
   padding: 20px;
