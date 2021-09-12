@@ -27,7 +27,10 @@ export class NoteListComponent implements OnInit {
         this.noteList = noteList;
         console.log(noteList);
       },
-      error: err => console.log(err)
+      error: err => {
+        console.log(err);
+        alert('Error in getting note list!!');
+      }
     });
   }
 
@@ -40,12 +43,26 @@ export class NoteListComponent implements OnInit {
 
   onNewNoteTextBlur() {
     if (this.newNoteText) {
-      this.noteListSerivce.addNewNote(this.newNoteText);
-      this.getNoteList();
+      this.noteListSerivce.addNewNote(this.newNoteText).subscribe({
+        next: newNote => {
+          this.noteList.push(newNote);
+        },
+        error: err => {
+          alert('Error in adding new note!!');
+        }
+      });
     }
     this.newNoteText = '';
     this.editingNewNote = false;
   }
 
-  saveNewNote() {}
+  onNoteUpdateSuccess(updatedNote) {
+    const note = this.noteList.find(n => n.id === updatedNote.id);
+    note.text = updatedNote.text;
+  }
+
+  onNoteDeleteSuccess(deletedNote) {
+    const noteIndex = this.noteList.findIndex(n => n.id === deletedNote.id);
+    this.noteList.splice(noteIndex, 1);
+  }
 }
